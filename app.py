@@ -1,5 +1,7 @@
 from flask import Flask, render_template, request
 from downloader import search_content, get_kodik_links
+import webbrowser
+import threading
 
 app = Flask(__name__)
 
@@ -25,6 +27,12 @@ def play(video_link):
     if kodik_links:
         return render_template('player.html', kodik_links=kodik_links)
     return "Ошибка получения видео!"
+    
+# Функция для автоматического открытия браузера
+def open_browser():
+    webbrowser.open_new("http://127.0.0.1:5000/")
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    # Создаём поток для открытия браузера после запуска приложения
+    threading.Timer(1, open_browser).start()
+    app.run()
