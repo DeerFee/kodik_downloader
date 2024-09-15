@@ -1,8 +1,91 @@
+/* Общие стили */
 body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
+    font-size: 14px;
+    line-height: 1.4;
 }
-input, button {
+
+/* Компактные отступы */
+.container {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.row {
+    margin-left: -5px;
+    margin-right: -5px;
+}
+
+.col, [class*="col-"] {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+/* Компактные карточки */
+.card {
+    margin-bottom: 10px;
+}
+
+.card-body {
     padding: 10px;
-    margin: 10px 0;
+}
+
+.card-title {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+/* Компактные формы */
+.form-control {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+}
+
+.btn {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+}
+
+/* Компактные списки */
+.list-group-item {
+    padding: 0.5rem 1rem;
+}
+
+/* Компактные таблицы */
+.table td, .table th {
+    padding: 0.5rem;
+}
+
+/* Дополнительные стили для результатов поиска */
+.search-result {
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.search-result h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.search-result p {
+    margin-bottom: 5px;
+}
+
+.search-result .btn {
+    margin-top: 5px;
+}
+
+/* Стили для поисковой формы */
+.search-form {
+    margin-bottom: 20px;
+}
+
+.search-form .form-control {
+    border-radius: 4px 0 0 4px;
+}
+
+.search-form .btn {
+    border-radius: 0 4px 4px 0;
 }
