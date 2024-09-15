@@ -19,14 +19,47 @@
         <ul class="list-group">
             {% for result in results %}
             <li class="list-group-item">
-                {{ result.title }}
-                <a href="/play/{{ result.link }}" class="btn btn-success float-end">Смотреть</a>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>{{ result.title }} ({{ result.year }})</h3>
+                        <p><strong>Оригинальное название:</strong> {{ result.title_orig }}</p>
+                        <p><strong>Другие названия:</strong> {{ result.other_title }}</p>
+                        <p><strong>Перевод:</strong> {{ result.translation.title }} ({{ result.translation.type }})</p>
+                        <p><strong>Качество:</strong> {{ result.quality }}</p>
+                        <p><strong>Последний сезон:</strong> {{ result.last_season }}</p>
+                        <p><strong>Последняя серия:</strong> {{ result.last_episode }}</p>
+                        <p><strong>Всего серий:</strong> {{ result.episodes_count }}</p>
+                        <p><strong>Кинопоиск ID:</strong> <a href="https://www.kinopoisk.ru/film/{{ result.kinopoisk_id }}" target="_blank">{{ result.kinopoisk_id }}</a></p>
+                        <p><strong>IMDB ID:</strong> <a href="https://www.imdb.com/title/{{ result.imdb_id }}" target="_blank">{{ result.imdb_id }}</a></p>
+                        <p><strong>Shikimori ID:</strong> <a href="https://shikimori.one/animes/{{ result.shikimori_id }}" target="_blank">{{ result.shikimori_id }}</a></p>
+                        <p><strong>World Art:</strong> <a href="{{ result.worldart_link }}" target="_blank">Ссылка на World Art</a></p>
+                        <a href="/play/{{ result.link }}" class="btn btn-success float-end">Смотреть</a>
+                        
+                        <!-- Кнопка для показа скриншотов -->
+                        {% if result.screenshots %}
+                        <button class="btn btn-secondary mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#screenshots{{ loop.index }}" aria-expanded="false" aria-controls="screenshots{{ loop.index }}">
+                            Показать скриншоты
+                        </button>
+                        <div class="collapse mt-2" id="screenshots{{ loop.index }}">
+                            <div class="row">
+                                {% for screenshot in result.screenshots %}
+                                <div class="col-md-3 mb-2">
+                                    <a href="{{ screenshot }}" target="_blank">
+                                        <img src="{{ screenshot }}" class="img-fluid" alt="Скриншот">
+                                    </a>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
             </li>
             {% endfor %}
         </ul>
         {% endif %}
     </div>
-    
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

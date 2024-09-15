@@ -91,6 +91,7 @@ def search():
     if not results:
         return render_template('index.html', error="Ничего не найдено!")
     
+    # Передаём результаты поиска в шаблон
     return render_template('index.html', results=results)
 
 @app.route('/play/<path:video_link>')
