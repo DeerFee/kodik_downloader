@@ -8,7 +8,7 @@ import threading
 app = Flask(__name__)
 
 # Конфигурация
-KODIK_TOKEN = "4492ae176f94d3103750b9443139fdc5"
+KODIK_TOKEN = "token"
 KODIK_API_URL = "https://kodikapi.com"  # Замените на правильный URL
 
 # Функции для работы с Kodik

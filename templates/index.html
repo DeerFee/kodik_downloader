@@ -30,10 +30,13 @@
                         <p><strong>Последний сезон:</strong> {{ result.last_season }}</p>
                         <p><strong>Последняя серия:</strong> {{ result.last_episode }}</p>
                         <p><strong>Всего серий:</strong> {{ result.episodes_count }}</p>
-                        <p><strong>Кинопоиск ID:</strong> <a href="https://www.kinopoisk.ru/film/{{ result.kinopoisk_id }}" target="_blank">{{ result.kinopoisk_id }}</a></p>
-                        <p><strong>IMDB ID:</strong> <a href="https://www.imdb.com/title/{{ result.imdb_id }}" target="_blank">{{ result.imdb_id }}</a></p>
-                        <p><strong>Shikimori ID:</strong> <a href="https://shikimori.one/animes/{{ result.shikimori_id }}" target="_blank">{{ result.shikimori_id }}</a></p>
-                        <p><strong>World Art:</strong> <a href="{{ result.worldart_link }}" target="_blank">Ссылка на World Art</a></p>
+                        <p>
+                    <strong>ID:</strong>
+                    <a href="https://www.kinopoisk.ru/film/{{ result.kinopoisk_id }}" target="_blank">Кинопоиск</a> |
+                    <a href="https://www.imdb.com/title/{{ result.imdb_id }}" target="_blank">IMDB</a> |
+                    <a href="https://shikimori.one/animes/{{ result.shikimori_id }}" target="_blank">Shikimori</a> |
+                    <a href="{{ result.worldart_link }}" target="_blank">World Art</a>
+                </p>
                         <a href="/play/{{ result.link }}" class="btn btn-success float-end">Смотреть</a>
                         
                         <!-- Кнопка для показа скриншотов -->
